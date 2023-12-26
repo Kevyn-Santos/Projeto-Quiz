@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz ETEC</title>
+</head>
+<body>
+
+    <!-- Código da pagina 1, o de inicio do quiz, contem quantidade de perguntas, e o botao de inicio -->
+    <div class="Home-box custom-box ">
+        <h3>Inicio:</h3>
+        <p>Numero de questões:<span class="total-question"> 5</span></p>
+        <p>Tempo por questão:<span class="total-question"> 45 segundos</span></p>
+
+        <button type="button" class="btn" onclick="startQuiz()">Começar Quiz</button>
+    </div>
+    <!-- Fim desse pedaço-->
+
+    <!-- codigo pagina 2, contem as perguntas e as opçoes, bem como o numero da questão -->
+    <div class="Quiz-box custom-box hide">
+        <div class="question-number"></div>
+        <div class="question-text"></div>
+        <div class="option-container">
+        </div>
+        <div class="next-question-btn">
+            <button type="button" class="btn" onclick="next()">Próxima</button>
+        </div>
+        <div class="timer" id="timer"></div>
+    </div>
+    <!-- Fim do código da pagina 2-->
+
+    <!-- Inicio da tabela de resultados-->
+    <div class="result-box custom-box hide">
+        <h1>Resultado</h1>
+        <table>
+            <tr>
+                <td>Total de questoes</td>
+                <td ><span class="total-question"></span></td>
+            </tr>
+            <tr>
+                <td>Respondidas</td>
+                <td ><span class="total-attempt"></span></td>
+            </tr>
+            <tr>
+                <td>Corretas</td>
+                <td ><span class="total-correct"></span></td>
+            </tr>
+            <tr>
+                <td>Erradas</td>
+                <td ><span class="total-wrong"></span></td>
+            </tr>
+            <tr>
+                <td>Porcentagem</td>
+                <td ><span class="total-percentage"></span></td>
+            </tr>
+            <tr>
+                <td>Pontuação total</td>
+                <td ><span class="total-score"></span></td>
+            </tr>
+        </table>
+        <button type="button" class="btn" onclick="backStart()">Voltar ao inicio</button>
+    </div>
+
+    <!-- Fim da tabela de resultados -->
+
+    <!-- Se algo for adicionado sera em algum dos pontos acima, o timer por exemplo pode ser colocado na pagina 2 -->
+<script src="questions.js"></script>
+<script src="main.js"></script>
+
+
+</body>
+</html>

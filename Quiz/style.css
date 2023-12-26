@@ -1,0 +1,196 @@
+/*importar fonte, devera ser declarada no body ou * caso queira usar*/
+
+body{
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: #009688;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+/*começo dos estilos da pagina 1, a de inicio*/
+.custom-box{
+    max-width: 700px;
+    background-color: #fff;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+.custom-box::before,
+.custom-box::after{/*Só tenta nao mexer nisso*/
+    content: '';
+    clear: both;
+    display: table;
+} 
+.custom-box.hide{
+    display: none;
+}
+.Home-box h3{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 15px;
+    line-height: 25px;
+}
+.Home-box p{
+    font-size: 20px;
+    margin-bottom: 10px;
+    line-height: 22px;
+    color: #000;
+    font-weight: 400;
+}
+.Home-box p span{
+    font-weight: 500;
+}
+.Home-box .btn{
+    margin-top: 20px;
+}
+.btn{
+    padding: 15px 45px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+/*fim do estilo da pagina 1*/
+
+/*começo do estilo da pagina 2, as perguntas junto das opçoes, e do numero da questão*/
+.Quiz-box .question-number,
+.Quiz-box .question-text,
+.Quiz-box .option-container,
+.Quiz-box .next-question-btn{
+    width: 100%;
+    float: left;
+}
+.Quiz-box.hide{
+    display: none;
+}
+.Quiz-box .question-number{
+    font-size: 25px;
+    color: #009688;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    line-height: 25px;
+}
+.Quiz-box .question-text{
+    font-size: 22px;
+    color: #000;
+    line-height: 28px;
+    font-weight: 400;
+    padding: 20px 0;
+    margin: 0;
+}
+.Quiz-box .option-container .option{
+    background-color: #ccc;
+    padding: 15px;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: capitalize;
+    position: relative;
+    overflow: hidden;
+     /* pedaço de animação */
+    opacity: 0;
+    animation: fadein 0.3s ease forwards;
+}
+@keyframes fadein{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    /* fim do pedaço de animação */
+}
+
+/* so pra nao ficar muito seca a seleção */
+.Quiz-box .option-container .option.Correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    z-index: -1;
+}
+.Quiz-box .option-container .option.Correct{
+    color: #fff;
+}
+.Quiz-box .option-container .option.Incorrect::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+}
+.Quiz-box .option-container .option.Incorrect{
+    color: #fff;
+}
+.Quiz-box .option-container .option.already-aswered{/* impossibilita de clicar em outras questoes */
+    pointer-events: none;
+}
+/* fim da seleção, é possivel adicionar animação */
+.Quiz-box .btn{
+    margin: 15px 0;
+}
+/* estilização timer */
+.Quiz-box .timer{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 25px;
+}
+.Quiz-box .timer.over{
+    color: red;
+    padding-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif, helvetica;
+}
+.Quiz-box .timer.running{
+    color: red;
+}
+/*Fim dos estilos da pagina 2*/
+
+/* Inicio da estilização da tabela de resultados */
+.result-box.hide{
+    display: none;
+}
+.result-box{
+    text-align: center;
+}
+.result-box h1{
+    font-size: 36px;
+    line-height: 42px;
+    color: #009688;
+}
+.result-box table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+.result-box table td{
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    font-weight: 500;
+    color: #000;
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+}
+/* Fim da estilização da tabela de resultados */
