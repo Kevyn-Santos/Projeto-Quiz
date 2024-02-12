@@ -16,20 +16,18 @@ let QuestionCounter = 0;
 let CurrentQuestion;
 let AvaliableQuestions = [];
 let AvaliableOptions = [];
-//let SelectedQuestions = new Set();
 let correctAnswers = 0;
 let attempt = 0;
 let count = 30;
-//let UsedQuestions = [];
 
 
 
 /* Põe as questoes dentro de Avaliable Questions */
 function SetAvaliableQuestions(){
     const TotalQuestions = quiz.length;
-        for (let i=0; i<TotalQuestions; i++){
-            AvaliableQuestions.push(quiz[i]);
-        }
+    for (let i=0; i<TotalQuestions; i++){
+        AvaliableQuestions.push(quiz[i]);
+    }
 }
 
 /* Esta função vai selecionar as perguntas e vai ficar responsavel por colocar todas as informações na tela (numero da questao, texto e opçoes) */
@@ -47,7 +45,6 @@ if (QuestionCounter >= questionLimit) {
     // Seleciona uma nova pergunta aleatória
     const QuestionIndex = Math.floor(Math.random() * AvaliableQuestions.length);
     CurrentQuestion = AvaliableQuestions.splice(QuestionIndex, 1)[0];
-    console.log(AvaliableQuestions);
     QuestionText.innerHTML = CurrentQuestion.question;
 }
 

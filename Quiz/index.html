@@ -7,18 +7,21 @@
     <title>Quiz ETEC</title>
 </head>
 <body>
+<!-- Willian passou por aqui -->
+<div class="servidor">
+    <h6 contenteditable="false" spellcheck="false">Servidor 1° DS</h6>
+</div>
 
-    <!-- Código da pagina 1, o de inicio do quiz, contem quantidade de perguntas, e o botao de inicio -->
+<!-- Código da pagina 1, o de inicio do quiz, contem quantidade de perguntas, e o botao de inicio -->
     <div class="Home-box custom-box ">
         <h3>Inicio:</h3>
-        <p>Numero de questões:<span class="total-question"> 5</span></p>
+        <p>Numero de questões:<span class="total-question"> 5 </span></p>
         <p>Tempo por questão:<span class="total-question"> 45 segundos</span></p>
 
         <button type="button" class="btn" onclick="startQuiz()">Começar Quiz</button>
     </div>
-    <!-- Fim desse pedaço-->
 
-    <!-- codigo pagina 2, contem as perguntas e as opçoes, bem como o numero da questão -->
+<!-- codigo pagina 2, contem as perguntas e as opçoes, bem como o numero da questão -->
     <div class="Quiz-box custom-box hide">
         <div class="question-number"></div>
         <div class="question-text"></div>
@@ -29,46 +32,41 @@
         </div>
         <div class="timer" id="timer"></div>
     </div>
-    <!-- Fim do código da pagina 2-->
 
-    <!-- Inicio da tabela de resultados-->
+<!-- Inicio da tabela de resultados-->
     <div class="result-box custom-box hide">
         <h1>Resultado</h1>
         <table>
             <tr>
-                <td>Total de questoes</td>
+                <td class="color">Total de questoes</td>
                 <td ><span class="total-question"></span></td>
             </tr>
             <tr>
-                <td>Respondidas</td>
+                <td class="color">Respondidas</td>
                 <td ><span class="total-attempt"></span></td>
             </tr>
             <tr>
-                <td>Corretas</td>
+                <td class="color">Corretas</td>
                 <td ><span class="total-correct"></span></td>
             </tr>
             <tr>
-                <td>Erradas</td>
+                <td class="color">Erradas</td>
                 <td ><span class="total-wrong"></span></td>
             </tr>
             <tr>
-                <td>Porcentagem</td>
+                <td class="color">Porcentagem</td>
                 <td ><span class="total-percentage"></span></td>
             </tr>
             <tr>
-                <td>Pontuação total</td>
+                <td class="color">Pontuação total</td>
                 <td ><span class="total-score"></span></td>
             </tr>
         </table>
         <button type="button" class="btn" onclick="backStart()">Voltar ao inicio</button>
     </div>
 
-    <!-- Fim da tabela de resultados -->
-
-    <!-- Se algo for adicionado sera em algum dos pontos acima, o timer por exemplo pode ser colocado na pagina 2 -->
+<!-- Se algo for adicionado sera em algum dos pontos acima, o timer por exemplo pode ser colocado na pagina 2 -->
 <script src="questions.js"></script>
 <script src="main.js"></script>
-
-
 </body>
 </html>
